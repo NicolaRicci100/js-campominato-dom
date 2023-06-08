@@ -6,6 +6,9 @@ console.log('JS OK');
 const playButton = document.getElementById('play');
 //griglia
 const fullGrid = document.getElementById('grid');
+//punteggio
+const scoreNumber = document.getElementById('score');
+let click = 0 //variabile per il punteggio
 
 const rows = 10; //righe
 const columns = 10; //colonne
@@ -21,7 +24,10 @@ playButton.addEventListener('click', function(){ // attivo il pulsante play
         cell.addEventListener('click', function(){ // se premo la cella
             console.log('il numero selezionato è ' + cell.innerText); //scrivo il numero in log
             cell.classList.add('azure'); //diventa azzurro
+            clickPoints = (scoreNumber.value = ++click); //aggiungo punti per ogni click
+            scoreNumber.innerText ='Punteggio: ' + clickPoints; //mostro il punteggio in pagina
         });
     fullGrid.appendChild(cell); // inserisco in pagina le celle
     }
-})
+});
+
