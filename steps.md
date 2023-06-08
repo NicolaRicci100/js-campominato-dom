@@ -29,6 +29,6 @@
     - l'utente preme una cella
         - SE il numero della cella non corrisponde a nessun numero dell'array
             - la cella diventa blu e aggiungo un punto
-        -ALTRIMENTI il numero corrisponde ad un numero dell'array
+        - ALTRIMENTI il numero corrisponde ad un numero dell'array
             - la cella diventa rossa e non aggiungo punti
             - la partita termina
