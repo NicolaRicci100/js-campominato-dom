@@ -8,7 +8,6 @@ const playButton = document.getElementById('play');
 const fullGrid = document.getElementById('grid');
 //punteggio
 const scoreNumber = document.getElementById('score');
-let click = 0 //variabile per il punteggio
 
 
 // * FUNZIONE per bombe casuali
@@ -29,8 +28,8 @@ const rows = 10; //righe
 const columns = 10; //colonne
 const cellsNumber = rows * columns; //totale celle
 playButton.addEventListener('click', function(){ // attivo il pulsante play
-    // resetto la griglia
-    fullGrid.innerHTML = '';
+    fullGrid.innerHTML = ''; // resetto la griglia
+    click = 0; //variabile per il punteggio
     // creazione della griglia
     for(i = 0; i < cellsNumber; i++){
         const cell = document.createElement('div'); // creo i div figli di grid
@@ -48,9 +47,9 @@ playButton.addEventListener('click', function(){ // attivo il pulsante play
             }
             else{ //altrimenti
             clickPoints = (scoreNumber.value = ++click); //aggiungo punti per ogni click
+            cell.classList.add('azure'); //diventa azzurro
             }
-        cell.classList.add('azure'); //diventa azzurro
-        scoreNumber.innerText ='Punteggio: ' + clickPoints; //mostro il punteggio in pagina
+        scoreNumber.innerText ='PUNTEGGIO RAGGIUNTO --> ' + clickPoints; //mostro il punteggio in pagina
     });
     fullGrid.appendChild(cell); // inserisco in pagina le celle
     }
