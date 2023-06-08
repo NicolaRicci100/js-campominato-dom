@@ -24,3 +24,11 @@
         - pesco il numero
             - se il numero è già nell'array allora ignoro il risultato e pesco nuovamente
             - se il numero non è ancora uscito lo aggiungo all'array
+    - stampo l'array coi 16 numeri in console
+- Calpestare le bombe
+    - l'utente preme una cella
+        - SE il numero della cella non corrisponde a nessun numero dell'array
+            - la cella diventa blu e aggiungo un punto
+        -ALTRIMENTI il numero corrisponde ad un numero dell'array
+            - la cella diventa rossa e non aggiungo punti
+            - la partita termina
