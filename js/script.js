@@ -10,6 +10,19 @@ const fullGrid = document.getElementById('grid');
 const scoreNumber = document.getElementById('score');
 let click = 0 //variabile per il punteggio
 
+
+// * FUNZIONI
+function bombs(){
+    const totBombs = []
+    for(let i = 0; i < totBombs.length; i++){
+        singleBombs = Math.floor(Math.random() * (max - min + 1)) + min; // max = 16 e min = 1 per restituire numeri da 1 a 16
+        totBombs.push(singleBombs);
+    }
+}
+
+
+
+
 const rows = 10; //righe
 const columns = 10; //colonne
 const cellsNumber = rows * columns; //totale celle
