@@ -9,7 +9,6 @@ const fullGrid = document.getElementById('grid');
 //punteggio
 const scoreNumber = document.getElementById('score');
 
-
 // * FUNZIONE per bombe casuali
 function bombs(totBombs, possibleLocation){ //i valori della funzione saranno 16 totBombs & 100 possibleLocation
     let clusterBombs = []; //array di bombe vuoto
@@ -45,8 +44,7 @@ playButton.addEventListener('click', function(){ // attivo il pulsante play
             else if(bombs(16, 100).includes(i)){ //se c'è una bomba
                 cell.classList.add('explode'); //diventa rosso
                 console.log('GAME OVER');
-                alert('Hai preso una bomba!');
-                scoreNumber.innerText = 'HAI PERSO! ma hai raggiunto ' + clickPoints + ' PUNTI!';
+                alert('Hai preso una bomba! HAI PERSO!');
                 document.getElementById('grid').style.pointerEvents = 'none'; //disabilito tutti i pointerEvents quando si perde
             }
             else{ //altrimenti
