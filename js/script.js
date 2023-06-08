@@ -24,8 +24,10 @@ playButton.addEventListener('click', function(){ // attivo il pulsante play
         cell.addEventListener('click', function(){ // se premo la cella
             console.log('il numero selezionato è ' + cell.innerText); //scrivo il numero in log
             cell.classList.add('azure'); //diventa azzurro
-            clickPoints = (scoreNumber.value = ++click); //aggiungo punti per ogni click
-            scoreNumber.innerText ='Punteggio: ' + clickPoints; //mostro il punteggio in pagina
+            if(cell.classList.contains('azure')){
+                clickPoints = (scoreNumber.value = ++click); //aggiungo punti per ogni click
+                scoreNumber.innerText ='Punteggio: ' + clickPoints; //mostro il punteggio in pagina
+            }
     });
     fullGrid.appendChild(cell); // inserisco in pagina le celle
     }
