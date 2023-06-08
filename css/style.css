@@ -20,3 +20,8 @@
     color: black;
     cursor: not-allowed;
 }
+.explode{
+    background-color: red;
+    color: white;
+    cursor: not-allowed;
+}

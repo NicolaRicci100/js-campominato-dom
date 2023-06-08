@@ -12,7 +12,7 @@ let click = 0 //variabile per il punteggio
 
 
 // * FUNZIONE per bombe casuali
-function bombs(totBombs, possibleLocation){
+function bombs(totBombs, possibleLocation){ //i valori della funzione saranno 16 totBombs & 100 possibleLocation
     let clusterBombs = []; //array di bombe vuoto
     while (clusterBombs.length < totBombs){ //posso caricare l'array con le bombe fino alla capacità massima
         let randomBombs; //creo variabile per le bombe casuali
@@ -23,9 +23,6 @@ function bombs(totBombs, possibleLocation){
     }
     return clusterBombs; //bombe caricate nell'array
 }
-console.log(bombs(16, 100)); //TODO testing della funzione bombe
-
-
 
 
 const rows = 10; //righe
@@ -43,7 +40,13 @@ playButton.addEventListener('click', function(){ // attivo il pulsante play
             console.log('il numero selezionato è ' + cell.innerText); //scrivo il numero in log
             if(cell.classList.contains('azure')){ //se è già azzurro
                 return; //non faccio nulla
-            }else{ //altrimenti
+            }
+            else if(bombs(16, 100).includes(i)){ //se c'è una bomba
+                cell.classList.add('explode'); //diventa rosso
+                console.log('GAME OVER');
+                alert('Hai preso una bomba!');
+            }
+            else{ //altrimenti
             clickPoints = (scoreNumber.value = ++click); //aggiungo punti per ogni click
             }
         cell.classList.add('azure'); //diventa azzurro
