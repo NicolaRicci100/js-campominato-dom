@@ -18,4 +18,5 @@
 .azure{
     background-color: aqua;
     color: black;
+    cursor: not-allowed;
 }
