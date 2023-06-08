@@ -26,8 +26,7 @@ playButton.addEventListener('click', function(){ // attivo il pulsante play
             cell.classList.add('azure'); //diventa azzurro
             clickPoints = (scoreNumber.value = ++click); //aggiungo punti per ogni click
             scoreNumber.innerText ='Punteggio: ' + clickPoints; //mostro il punteggio in pagina
-        });
+    });
     fullGrid.appendChild(cell); // inserisco in pagina le celle
     }
 });
-

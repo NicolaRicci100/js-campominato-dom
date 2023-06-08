@@ -14,3 +14,13 @@
     - crea variabile vuota
     - se l'utente preme su una cella aggiungi 1 alla variabile sopra
     - mostro la variabile in pagina
+- Cella non cliccabile
+    - premo sulla cella
+        - se ha la classe azure tolgo l'interazione
+        - se non ha la classe allora la aggiungo
+- Bombe
+    - creo un array vuoto
+    - genero 16 numeri casuali da 1 a 100 con un ciclo
+        - pesco il numero
+            - se il numero è già nell'array allora ignoro il risultato e pesco nuovamente
+            - se il numero non è ancora uscito lo aggiungo all'array
