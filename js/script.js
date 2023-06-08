@@ -24,6 +24,7 @@ function bombs(totBombs, possibleLocation){ //i valori della funzione saranno 16
 }
 
 
+
 const rows = 10; //righe
 const columns = 10; //colonne
 const cellsNumber = rows * columns; //totale celle
@@ -44,12 +45,15 @@ playButton.addEventListener('click', function(){ // attivo il pulsante play
                 cell.classList.add('explode'); //diventa rosso
                 console.log('GAME OVER');
                 alert('Hai preso una bomba!');
+                scoreNumber.innerText = 'HAI PERSO!'
             }
             else{ //altrimenti
             clickPoints = (scoreNumber.value = ++click); //aggiungo punti per ogni click
             cell.classList.add('azure'); //diventa azzurro
+            scoreNumber.innerText ='PUNTEGGIO RAGGIUNTO --> ' + clickPoints; //mostro il punteggio in pagina
             }
-        scoreNumber.innerText ='PUNTEGGIO RAGGIUNTO --> ' + clickPoints; //mostro il punteggio in pagina
+        
+
     });
     fullGrid.appendChild(cell); // inserisco in pagina le celle
     }
