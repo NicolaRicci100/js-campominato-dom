@@ -11,14 +11,19 @@ const scoreNumber = document.getElementById('score');
 let click = 0 //variabile per il punteggio
 
 
-// * FUNZIONI
-function bombs(){
-    const totBombs = []
-    for(let i = 0; i < totBombs.length; i++){
-        singleBombs = Math.floor(Math.random() * (max - min + 1)) + min; // max = 16 e min = 1 per restituire numeri da 1 a 16
-        totBombs.push(singleBombs);
+// * FUNZIONE per bombe casuali
+function bombs(totBombs, possibleLocation){
+    let clusterBombs = []; //array di bombe vuoto
+    while (clusterBombs.length < totBombs){ //posso caricare l'array con le bombe fino alla capacità massima
+        let randomBombs; //creo variabile per le bombe casuali
+        do{
+            randomBombs = Math.floor(Math.random() * possibleLocation) + 1; //genero casualmente le bombe 
+        } while (clusterBombs.includes(randomBombs)); //mi assicuro che le bombe non siano già nel array
+        clusterBombs.push(randomBombs); //carico le bombe
     }
+    return clusterBombs; //bombe caricate nell'array
 }
+console.log(bombs(16, 100)); //TODO testing della funzione bombe
 
 
 
