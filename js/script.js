@@ -29,6 +29,7 @@ const rows = 10; //righe
 const columns = 10; //colonne
 const cellsNumber = rows * columns; //totale celle
 playButton.addEventListener('click', function(){ // attivo il pulsante play
+    document.getElementById('grid').style.pointerEvents = 'auto'; //riabilito i pointerEvents nel caso la partita venisse restetata col bottone Play
     fullGrid.innerHTML = ''; // resetto la griglia
     click = 0; //variabile per il punteggio
     // creazione della griglia
@@ -45,12 +46,17 @@ playButton.addEventListener('click', function(){ // attivo il pulsante play
                 cell.classList.add('explode'); //diventa rosso
                 console.log('GAME OVER');
                 alert('Hai preso una bomba!');
-                scoreNumber.innerText = 'HAI PERSO!'
+                scoreNumber.innerText = 'HAI PERSO! ma hai raggiunto ' + clickPoints + ' PUNTI!';
+                document.getElementById('grid').style.pointerEvents = 'none'; //disabilito tutti i pointerEvents quando si perde
             }
             else{ //altrimenti
             clickPoints = (scoreNumber.value = ++click); //aggiungo punti per ogni click
             cell.classList.add('azure'); //diventa azzurro
-            scoreNumber.innerText ='PUNTEGGIO RAGGIUNTO --> ' + clickPoints; //mostro il punteggio in pagina
+                if(clickPoints === 84){
+                    scoreNumber.innerText ='HAI VINTO!'; //se riesco a non premere nessuna bomba
+                }else{
+                    scoreNumber.innerText ='PUNTEGGIO RAGGIUNTO --> ' + clickPoints; //mostro il punteggio in pagina
+                }
             }
         
 
